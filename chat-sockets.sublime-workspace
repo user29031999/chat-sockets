@@ -1,0 +1,260 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"c",
+				"car"
+			],
+			[
+				"mess",
+				"id_message"
+			],
+			[
+				"me",
+				"messages_fts"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"termin",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"pre",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"terminus",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"PRETT",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"pret",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ai/GitRepositories/NodeJs/chat-sockets"
+	],
+	"file_history":
+	[
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/chat-sockets.sublime-project",
+		"/home/ai/.cache/chat-sockets.sublime-project",
+		"/home/ai/.cache/.fr-A4qfuX/META-INF/plugin.xml",
+		"/home/ai/GitRepositories/MonDemo/app/build.gradle",
+		"/home/ai/Desktop/stateservices_success_response.json",
+		"/home/ai/GitRepositories/NodeJs/FirstServer/carapp.js",
+		"/home/ai/GitRepositories/NodeJs/FirstServer/car.js",
+		"/home/ai/GitRepositories/NodeJs/FirstServer/readline.js",
+		"/home/ai/GitRepositories/NodeJs/FirstServer/app.js",
+		"/home/ai/GitRepositories/NodeJs/FirstServer/count.js",
+		"/home/ai/Documents/Proyecto_ApolinarOrtizIsidro",
+		"/home/ai/Documents/Proyecto_ApolinarOrtizIsidro.txt",
+		"/home/ai/GitRepositories/PythonProjects/hola_mundo.py",
+		"/home/ai/Desktop/log_mc_android_21102021_user_not_enrolled.txt",
+		"/home/ai/Desktop/2021-10-21_log_android_secret_user",
+		"/home/ai/Desktop/2021-10-21_log_android_user_not_enrolled_error",
+		"/home/ai/Desktop/06102021_android_reporte_verificacion_herramientas_logcat",
+		"/home/ai/Downloads/places.xml",
+		"/home/ai/Downloads/prices.xml",
+		"/home/ai/Documents/Esime/Metodologia/Diapositivas_Latex/main.tex",
+		"/home/ai/Documents/Esime/Metodologia/Diapositivas_Latex/00Portada.tex",
+		"/home/ai/Documents/GlobalDocs/360-log-authenticate-error.txt",
+		"/home/ai/Documents/GlobalDocs/SeparacionNavGraphs_AppClaro360",
+		"/home/ai/websocket_medicos_experts_directory.json",
+		"/home/ai/Documents/GlobalDocs/peru_departments_iso.json",
+		"/home/ai/Documents/GlobalDocs/360-MC-LOG-TELMEX-3082021"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Terminus":
+	{
+		"height": 283.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 283.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "chat-sockets.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 333.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
