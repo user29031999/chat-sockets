@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"w",
+				"white"
+			],
+			[
+				"overflow",
+				"overflow-y"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"mes",
+				"messages"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
 				"c",
 				"car"
 			],
@@ -32,7 +52,19 @@
 		"selected_items":
 		[
 			[
+				"pret",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"terminus",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
 				"termin",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"terminal",
 				"Terminus: Open Default Shell in Panel"
 			],
 			[
@@ -42,10 +74,6 @@
 			[
 				"json",
 				"Pretty JSON: Format JSON"
-			],
-			[
-				"terminus",
-				"Terminus: Open Default Shell in Panel"
 			],
 			[
 				"package",
@@ -61,10 +89,6 @@
 			],
 			[
 				"prett",
-				"Pretty JSON: Format JSON"
-			],
-			[
-				"pret",
 				"Pretty JSON: Format JSON"
 			],
 			[
@@ -96,10 +120,19 @@
 	},
 	"expanded_folders":
 	[
-		"/home/ai/GitRepositories/NodeJs/chat-sockets"
+		"/home/ai/GitRepositories/NodeJs/chat-sockets",
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/server"
 	],
 	"file_history":
 	[
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/client/index.html",
+		"/home/ai/Downloads/places.xml",
+		"/home/ai/Downloads/prices.xml",
+		"/home/ai/Downloads/76f8b52b-1b21-4bc7-b667-936195850a5d",
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/server/index.js",
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/client/main.js",
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/package.json",
+		"/home/ai/GitRepositories/NodeJs/chat-sockets/index.js",
 		"/home/ai/GitRepositories/NodeJs/chat-sockets/chat-sockets.sublime-project",
 		"/home/ai/.cache/chat-sockets.sublime-project",
 		"/home/ai/.cache/.fr-A4qfuX/META-INF/plugin.xml",
@@ -117,8 +150,6 @@
 		"/home/ai/Desktop/2021-10-21_log_android_secret_user",
 		"/home/ai/Desktop/2021-10-21_log_android_user_not_enrolled_error",
 		"/home/ai/Desktop/06102021_android_reporte_verificacion_herramientas_logcat",
-		"/home/ai/Downloads/places.xml",
-		"/home/ai/Downloads/prices.xml",
 		"/home/ai/Documents/Esime/Metodologia/Diapositivas_Latex/main.tex",
 		"/home/ai/Documents/Esime/Metodologia/Diapositivas_Latex/00Portada.tex",
 		"/home/ai/Documents/GlobalDocs/360-log-authenticate-error.txt",
@@ -143,6 +174,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=",
+			"\\w*",
+			"String",
+			"int",
+			"</string>",
+			"\">",
+			"<string name=\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -150,6 +188,12 @@
 		"regex": true,
 		"replace_history":
 		[
+			":",
+			"",
+			"int",
+			";",
+			" = ",
+			"public final static String "
 		],
 		"reverse": false,
 		"scrollbar_highlights": true,
@@ -173,7 +217,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -252,7 +296,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 333.0,
+	"side_bar_width": 477.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
