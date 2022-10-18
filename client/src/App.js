@@ -25,7 +25,7 @@ const theme = extendTheme({
 })
 
 const authUser = async () => {
-  let response = await fetch("http://localhost:5000/auth", {
+  let response = await fetch(`${process.env.REACT_APP_SERVER}/auth`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -61,9 +61,30 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [userSession, setUserSession] = React.useState();
+
+  const fetchSession = async () => {
+    let res = await authUser();
+    if (res.status === 200) {
+      setUserSession(await res.json());
+    } else {
+      setUserSession(null);
+    }
+  }
+
+  React.useEffect(() => {
+    fetchSession();
+  }, []);
+
+  React.useEffect(() => {
+    console.log('user session', userSession);
+  }, [userSession]);
+
   return (
     <ChakraProvider theme={theme}>
-      <RouterProvider router={router} />
+      <AuthContext.Provider value={userSession}>
+        <RouterProvider router={router} />
+      </AuthContext.Provider>
     </ChakraProvider>
   );
 }

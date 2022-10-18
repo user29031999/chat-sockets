@@ -1,8 +1,10 @@
 import { Sequelize } from 'sequelize';
 import initModels from '../models/init-models.js';
 
-const sequelize = new Sequelize('messaging_app_db', 'messaging_user', 'UserRoot2903@', {
-    host: 'localhost',
+console.log(process.env.DB_HOST);
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    host: process.env.DB_HOST,
     dialect: 'mariadb',
 });
 

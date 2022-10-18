@@ -4,21 +4,22 @@ import { Box, Button, FormControl, FormHelperText, FormLabel, Heading, Input, VS
 import { Flex } from '@chakra-ui/react';
 
 async function login(user) {
-    let login = await fetch("http://localhost:5000/auth/login", {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include'
-    });
+    let login = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`,
+        {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
 
     console.log(await login.json());
 }
 
 function Home() {
     let navigate = useNavigate();
-    
+
     const [loginInput, setLoginInput] = React.useState({
         username: '',
         password: '',

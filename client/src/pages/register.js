@@ -4,7 +4,7 @@ import { Box, Button, FormControl, FormHelperText, FormLabel, Heading, Input, VS
 import { Flex } from '@chakra-ui/react';
 
 async function PostUser(user) {
-    let response = await fetch("http://localhost:5000/users/", {
+    let response = await fetch(`${process.env.REACT_APP_SERVER}/users/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

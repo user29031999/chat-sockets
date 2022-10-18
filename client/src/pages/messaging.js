@@ -1,57 +1,55 @@
-import { Grid, GridItem, Box, Input, List, ListItem, Divider, Avatar, HStack, Text, Heading } from '@chakra-ui/react'
+import {
+    Grid,
+    GridItem,
+} from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../components/auth_context.js';
 import React from 'react';
-
-function ContactsNav({ contacts }) {
-    return (
-        <Box
-            w='100%'
-            h='100%'
-            display='flex'
-            flexDirection='column'
-            bg='gray.100'>
-            <Heading size='lg'>
-                Contactos
-            </Heading>
-            <Divider my={2} />
-            <Input placeholder='Buscar contacto...' />
-            <Divider my={2} />
-            <List>
-                {contacts.length > 0 && contacts.map((value, index) => (
-                    <ListItem key={index} my={1}>
-                        <HStack h='5vh' p={2} borderRadius={5} _hover={{
-                            background: "white",
-                            color: "teal.500",
-                        }}>
-                            <Avatar size='sm' name={value.name} />
-                            <Text fontSize='sm'>
-                                {value.username}
-                            </Text>
-                        </HStack>
-                        <Divider />
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
-}
+import ContactsNav from '../components/contacts_nav.js';
+import MessagesNav from '../components/messages_nav.js';
 
 function Messaging() {
+    let navigate = useNavigate();
     const [users, setUsers] = React.useState([]);
+    const [selectedUser, setSelectedUser] = React.useState();
+    const userSession = React.useContext(AuthContext);
+
+    console.log(process.env.REACT_APP_SERVER);
 
     async function fetchUsers() {
-        let users = await fetch("http://localhost:5000/users/", {
+        let users = await fetch(`${process.env.REACT_APP_SERVER}/users/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-            }
+            },
+            credentials: 'include',
         });
 
         setUsers(await users.json());
     }
 
+    async function logout() {
+        let logout = await fetch(`${process.env.REACT_APP_SERVER}/auth/logout`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+        });
+        console.log(logout);
+        if (logout.status === 200) {
+            navigate('/', { replace: true });
+        }
+    }
+
     React.useEffect(() => {
         fetchUsers();
     }, []);
+
+
+    React.useEffect(() => {
+        console.log('session messaging', userSession);
+    }, [userSession]);
 
     return (
         <Grid
@@ -59,16 +57,20 @@ function Messaging() {
                   "nav main"
             `}
             gridTemplateColumns={'30% 70%'}
-            h='calc(100vh)'
-            gap='1'
+            h='100vh'
             color='blackAlpha.700'
             fontWeight='bold'
         >
             <GridItem p='2' area={'nav'}>
-                <ContactsNav contacts={users} />
+                {userSession && <ContactsNav
+                    contacts={users}
+                    user={userSession}
+                    logout={logout}
+                    setSelectedUser={setSelectedUser}
+                />}
             </GridItem>
-            <GridItem pl='2' bg='gray.50' area={'main'}>
-                Main
+            <GridItem bg='gray.50' area={'main'}>
+                <MessagesNav userConversation={selectedUser} />
             </GridItem>
         </Grid>
     );

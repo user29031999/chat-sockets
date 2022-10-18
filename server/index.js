@@ -24,17 +24,26 @@ io.on('connection', function(socket){
 	});
 });*/
 
+import 'dotenv/config.js'
 import express from 'express';
 import bodyparser from 'body-parser';
 import cors from 'cors';
 import db from './utils/db.js'
 import session from 'express-session';
+import { Server } from 'socket.io';
+import { createServer } from 'http';
 import sequelizeStore from 'connect-session-sequelize';
 import createUsersController from '../server/routes/users.js';
 import createAuthRoute from '../server/routes/auth.js';
+import createMessagingRoute from '../server/routes/messaging.js';
+
+//dotenv.config()
+
+console.log(process.env.DB_NAME);
 
 const sequelize = await db();
 const app = express();
+const httpServer = createServer(app);
 const userRoute = await createUsersController(sequelize);
 const authRoute = await createAuthRoute(sequelize);
 const store = sequelizeStore(session.Store);
@@ -45,7 +54,7 @@ const sessionStore = new store({
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors({
-	origin: "http://localhost:3000",
+	origin: process.env.CLIENT_ORIGIN,
 	methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
 	credentials: true,
 }));
@@ -60,6 +69,27 @@ sessionStore.sync();
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
 
-app.listen(5000, function () {
+/*app.listen(5000, function () {
 	console.log('Server @localhost:5000 ready...');
+});*/
+
+const io = new Server(httpServer, {
+	cors: {
+		origin: process.env.CLIENT_ORIGIN
+	}
 });
+
+io.on("connection", (socket) => {
+	console.log("New client connected");
+	socket.on("message", (data) => {
+		console.log('new socket message ', data);
+	});
+	socket.on("disconnect", (reason) => {
+		console.log('user disconnect', reason);
+	});
+});
+
+const messagingRoute = createMessagingRoute(io);
+app.use('/messaging', messagingRoute);
+
+httpServer.listen(5000);

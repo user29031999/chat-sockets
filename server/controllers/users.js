@@ -1,10 +1,24 @@
 import bcrypt from 'bcrypt';
+import { Op } from 'sequelize';
 
 const SALT_ROUNDS = 10;
 
 export const GetUser = async (sequelize) => {
     return async (req, res) => {
-        const users = await sequelize.models.user.findAll();
+        let users = [];
+        console.log('session user', req.session.user);
+        if (req.session.user) {
+            users = await sequelize.models.user.findAll({
+                where: {
+                    user_id: {
+                        [Op.ne]: req.session.user.user_id,
+                    }
+                }
+            });
+        } else {
+            users = await sequelize.models.user.findAll();
+        }
+        console.log('users', users);
         res.status(200).json(users);
         res.end();
     }
