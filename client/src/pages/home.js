@@ -4,7 +4,7 @@ import { Box, Button, FormControl, FormHelperText, FormLabel, Heading, Input, VS
 import { Flex } from '@chakra-ui/react';
 
 async function login(user) {
-    let login = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`,
+    const login = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`,
         {
             method: 'POST',
             body: JSON.stringify(user),
@@ -13,8 +13,9 @@ async function login(user) {
             },
             credentials: 'include'
         });
-
-    console.log(await login.json());
+    const loginResponse = await login.json();
+    console.log(loginResponse);
+    return login.status === 200;
 }
 
 function Home() {
@@ -52,7 +53,10 @@ function Home() {
                     <Button
                         colorScheme='teal'
                         onClick={() => {
-                            login(loginInput);
+                            const userLogged = login(loginInput);
+                            if (userLogged) {
+                                navigate('/messaging');
+                            }
                         }}>
                         Iniciar Sesión
                     </Button>

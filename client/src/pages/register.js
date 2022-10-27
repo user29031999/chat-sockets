@@ -4,15 +4,16 @@ import { Box, Button, FormControl, FormHelperText, FormLabel, Heading, Input, VS
 import { Flex } from '@chakra-ui/react';
 
 async function PostUser(user) {
-    let response = await fetch(`${process.env.REACT_APP_SERVER}/users/`, {
+    const response = await fetch(`${process.env.REACT_APP_SERVER}/users/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
     });
-
-    console.log(await response.json());
+    const registerUser = await response.json();
+    console.log(registerUser);
+    return response.status === 200;
 }
 
 function Register() {
@@ -53,8 +54,11 @@ function Register() {
                         </FormLabel>
                         <Input type='password' name='password' value={userInput.password} onChange={handler} />
                     </FormControl>
-                    <Button colorScheme='teal' onClick={() => {
-                        PostUser(userInput);
+                    <Button colorScheme='teal' onClick={async () => {
+                        const userRegistered = await PostUser(userInput);
+                        if (userRegistered) {
+                            navigate('/');
+                        }
                     }}> Crear cuenta </Button>
                     <Box>
                         <>¿Tienes cuenta? </>

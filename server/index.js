@@ -37,8 +37,6 @@ import createUsersController from '../server/routes/users.js';
 import createAuthRoute from '../server/routes/auth.js';
 import createMessagingRoute from '../server/routes/messaging.js';
 
-//dotenv.config()
-
 console.log(process.env.DB_NAME);
 
 const sequelize = await db();
